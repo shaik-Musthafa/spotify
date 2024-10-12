@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Login</title>
+    <style>
+        #container{
+            border: 1px solid;
+            height: 300px;
+            width: 300px;
+            /* justify-items: center; */
+            align-content: center;
+        }
+        #form{
+            margin-left: 20px;
+        }#mail{
+            margin-left: 25px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <form action="index0.html" id="form">
+        <label for="mail">Enter a Mail:</label><input id="mail" type="email" /><br /><br />
+        Enter Password: <input id="password" type="password" /> <br /><br />
+        <input type="submit" onclick="validate()" value="login" /><br /><br />
+        <a href="">forgot Password? click here...!</a>
+      </form>
+    </div>
+    <!-- <a href="https://www.spotify.com/in-en/signup?forward_url=https%3A%2F%2Fopen.spotify.com%2Fsearch"></a> -->
+     <script>
+       function validate(){
+        let mail=document.getElementById("mail")
+        let password=document.getElementById("password")
+        if(mail.value.trim()==""||password.value.trim()==""){
+          alert("Fill the blank Fields...!")
+          return false
+        }
+        else{
+          true
+        }
+       }
+       validate
+     </script>
+  </body>
+</html>
