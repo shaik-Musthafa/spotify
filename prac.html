@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Episode Search</title>
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+        }
+        .loading {
+            color: blue;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- <h1>Search for Spotify Episode Details</h1> -->
+    <!-- <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Enter Episode ID" required>
+        <button type="submit">Search</button>
+    </form>
+    <div id="result"></div> Area to display results -->
+
+    <!-- <script>
+        // Fetch data based on the episode ID
+        async function fetchData(episodeId) {
+            const url = `https://spotify-scraper.p.rapidapi.com/v1/chapter/details?episodeId=${episodeId}`;
+            const options = {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-key': '1d67de2a8cmsh059374442dd9ad5p108fe3jsnb7d85e439204',
+                    'x-rapidapi-host': 'spotify-scraper.p.rapidapi.com'
+                }
+            };
+            const response = await fetch(url, options);
+            const result = await response.json(); // Parse JSON response
+            console.log(result);
+            }
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- // const resultDiv = document.getElementById("result");
+            // resultDiv.innerHTML = '<p class="loading">Loading...</p>'; // Show loading message
+
+        //     try {
+        //         const response = await fetch(url, options);
+        //         const result = await response.json(); // Parse JSON response
+        //         console.log(result); // Log result for debugging
+
+        //         // Display result in the result div -->
+        <!-- //         resultDiv.innerHTML = `
+        //             <h3>${result.title || 'Unknown Title'}</h3>
+        //             <p>Duration: ${result.duration || 'Unknown'} minutes</p>
+        //             <p>Description: ${result.description || 'No description available.'}</p>
+        //             <p>Release Date: ${result.releaseDate || 'Unknown'}</p>
+        //         `;
+        //     } catch (error) {
+        //         console.error(error);
+        //         resultDiv.innerHTML = '<p class="error">Error fetching data. Please try again later.</p>'; // Show error message
+        //     }
+        // }
+
+        // Event listener for the search form submission
+        document.getElementById("searchForm").addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent form from submitting normally
+            const input = document.getElementById("searchInput").value; // Get input value
+            console.log("Searching for Episode ID:", input); // Log the input for debugging
+            fetchData(input); // Call fetchData with the episode ID from input
+        }); -->
+    <!-- </script> -->
+     <script>
+     async function fetchData(params) {
+     const url = 'https://spotify-scraper.p.rapidapi.com/v1/chapter/details?episodeId=4VIm6jghrV0MfwwLyp1E7y';
+     const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': '1d67de2a8cmsh059374442dd9ad5p108fe3jsnb7d85e439204',
+		'x-rapidapi-host': 'spotify-scraper.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+    let display=document.createElement("div")
+    display.innerHTML=`
+    <p>${result.type}</p>
+    `
+} catch (error) {
+	console.error(error);
+}
+     }
+fetchData()
+     </script>
+</body>
+</html> 
