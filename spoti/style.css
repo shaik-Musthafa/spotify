@@ -1,0 +1,148 @@
+/* Spotify Playlist */
+.spotify-playlist {
+    padding: 20px 20px;
+}
+h2 {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.spotify-playlist .card {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+.spotify-playlist .card .item {
+    min-width: 180px;
+    width: 100%;
+    background-color: #272626;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 8px;
+    transition: background-color 0.3s ease;
+}
+.spotify-playlist .card .item:hover {
+    background-color: #3d3c3c;
+}
+.spotify-playlist .card .item img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+.spotify-playlist .item h4 {
+    color: #fff;
+}
+.spotify-playlist .item p {
+    color: #8f8e8e;
+    font-size: 13px;
+    margin-top: 10px;
+}
+.spotify-playlist .item p:hover {
+    text-decoration: underline;
+}
+.spotify-playlist .play-btn {
+    position: relative;
+}
+.spotify-playlist .play-btn i {
+    position: absolute;
+    background: #1db548;
+    border-radius: 100%;
+    padding: 15px;
+    right: 10px;
+    top: -65px;
+    opacity: 0;
+    transition: 0.3s ease all;
+}
+.spotify-playlist .card .item:hover .play-btn i {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+.card {
+    background-color: #1c1c1c;
+    color: white;
+    width: calc(30% - 10px);
+    height: 200px;
+    position: relative; 
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+  .card:hover {
+     transform: scale(1.05);
+     background-color: #333;
+  }
+  .card img {
+     width: 100%;
+     height: auto;
+  }
+  .popular:hover{
+      border-bottom:2px solid;
+  }
+  .card-title:hover, .popular:hover{
+    border-bottom:2px solid;
+  }
+  .play {
+    position: absolute;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+ .card:hover .play {
+  opacity: 1;
+  }
+  .card-img-top {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+  }
+  .card:hover .card-img-top {
+  transform: scale(1.05); 
+  }
+  .card:hover{
+  background-color: gray;
+  }
+  #btn{
+  height: 50px;
+  width: 50px;
+  margin-left: 40px;
+  margin-top: 10px;
+  }
+  #more-artists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    margin-top: 20px; 
+  }
+  #more-artists .card {
+    width: calc(30% - 10px); 
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+  }
+  #more-artists .card:hover {
+  transform: scale(1.05);
+  background-color: #333; 
+  }
+  #more-artists .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%; 
+  }
+  #more-artists .card-title {
+  color: white; 
+  }
+  #more-artists .play {
+  height: 50px;
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+  }
+  #more-artists .card:hover .play {
+    opacity: 1; 
+    }
