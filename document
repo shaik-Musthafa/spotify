@@ -1,0 +1,74 @@
+ <!-- artist code -->
+ <div class="container6">
+  <h2>
+      <i><a class="popular" style="text-decoration: none; color: #1c1c1c;" href="#">Popular artists</a></i>
+  </h2>
+  <a href="#" id="show-all" style="text-decoration: none; color: #1c1c1c; display: block; margin-top: 20px;">Show All Artists</a>
+  <div id="flexi">
+      <div class="card" style="width: 30%;">
+          <img src="./assets/pritam.png" class="card-img-top" alt="Pritam">
+          <img src="/assets/play-button.png" class="play" alt="play-button">
+          <div class="card-body text-center">
+              <h5 class="card-title">Pritam</h5>
+              <p>Artist</p>
+          </div>
+      </div>    
+      <div class="card" style="width: 30%;">
+          <img src="./assets/ar rehaman.png" class="card-img-top" alt="A.R. Rahman">
+          <img src="/assets/play-button.png" class="play" alt="play-button">
+          <div class="card-body text-center">
+              <h5 class="card-title">A.R. Rahman</h5>
+              <p>Artist</p>
+          </div>
+      </div>
+
+      <div class="card" style="width: 30%;">
+          <img src="./assets/anirudh.png" class="card-img-top" alt="Anirudh">
+          <img src="/assets/play-button.png" class="play" alt="play-button">
+          <div class="card-body text-center">
+              <h5 class="card-title">Anirudh</h5>
+              <p>Artist</p>
+          </div>
+      </div>
+
+      <div class="card" style="width: 30%;">
+          <img src="./assets/arjith.png" class="card-img-top" alt="Arijit Singh">
+          <img src="/assets/play-button.png" class="play" alt="play-button">
+          <div class="card-body text-center">
+              <h5 class="card-title">Arijit Singh</h5>
+              <p>Artist</p>
+          </div>
+      </div>
+
+      <div class="card" style="width: 30%;">
+          <img src="./assets/vishalmishra.png" class="card-img-top" alt="Vishal Mishra">
+          <img src="/assets/play-button.png" class="play" alt="play-button">
+          <div class="card-body text-center">
+              <h5 class="card-title">Vishal Mishra</h5>
+              <p>Artist</p>
+          </div>
+      </div>
+
+      <!-- More artists start -->
+      <div id="more-artists" style="display: none;">
+        <div class="card" style="width: 100%;">
+          <img src="./assets/luffy.png" class="card-img-top" alt="Pritam">
+          <img src="/assets/play-button.png" class="play" alt="play-button">
+          <div class="card-body text-center">
+              <h5 class="card-title">Luffy</h5>
+              <p>Artist</p>
+          </div>
+      </div>
+      
+      <div class="card" style="width: 100%;">
+        <img src="./assets/luffy3.png" class="card-img-top" alt="Pritam">
+        <img src="/assets/play-button.png" class="play" alt="play-button">
+        <div class="card-body text-center">
+            <h5 class="card-title">Nika</h5>
+            <p>Artist</p>
+        </div>
+    </div>
+      </div>
+  </div>
+</div>
+<!-- code end -->

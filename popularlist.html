@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .card {
+            border: none; /* Remove border from cards */
+            text-align: center; /* Center text inside the cards */
+            margin: 20px; /* Add margin between cards */
+        }
+        .play-btn {
+            position: relative;
+            bottom: 10px;
+        }
+        .item img {
+            border-radius: 50%; /* Make images circular */
+            transition: transform 0.2s; /* Smooth scale transition */
+        }
+        .item img:hover {
+            transform: scale(1.05); /* Slightly enlarge image on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Popular Artists</h2>
+        <div class="row">
+            <div class="col-md-2 col-sm-4">
+                <div class="card">
+                    <img src="/assets/pritam.png" class="card-img-top" height="190px" alt="Pritam">
+                    <div class="play-btn">
+                        <button class="btn btn-primary" aria-label="Play Pritam"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Pritam</h4>
+                        <p class="card-text">Artist</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4">
+                <div class="card">
+                    <img src="/assets/arjith.png" class="card-img-top" height="200px" alt="Arijit Singh">
+                    <div class="play-btn">
+                        <button class="btn btn-primary" aria-label="Play Arijit Singh"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Arijit Singh</h4>
+                        <p class="card-text">Artist</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4">
+                <div class="card">
+                    <img src="/assets/ar rehaman.png" class="card-img-top" height="200px" alt="A.R. Rahman">
+                    <div class="play-btn">
+                        <button class="btn btn-primary" aria-label="Play A.R. Rahman"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">A.R. Rahman</h4>
+                        <p class="card-text">Artist</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4">
+                <div class="card">
+                    <img src="/assets/anirudh.png" class="card-img-top" height="200px" alt="Anirudh Ravichander">
+                    <div class="play-btn">
+                        <button class="btn btn-primary" aria-label="Play Anirudh Ravichander"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Anirudh Ravichander</h4>
+                        <p class="card-text">Artist</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4">
+                <div class="card">
+                    <img src="/assets/vishalmishra.png" class="card-img-top" height="180px" alt="Vishal Mishra">
+                    <div class="play-btn">
+                        <button class="btn btn-primary" aria-label="Play Vishal Mishra"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Vishal Mishra</h4>
+                        <p class="card-text">Artist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

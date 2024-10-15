@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+         body{
+            margin-top: -47px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card text-center shadow-sm">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="card-title"><i>spotify Your song</i></h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Audio Element -->
+                        <audio id="audioPlayer" controls>
+                            <source id="audioSource" src="../assets/audio/" type="audio/mp4">
+                        </audio>
+                        <!-- Progress Bar -->
+                        <div class="progress mt-3" id="progressBarContainer">
+                            <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <!-- Music Controls -->
+                        <div class="mt-3">
+                            <button id="previous" class="btn btn-secondary me-2">
+                                <i class="bi bi-skip-backward-fill"></i> <svg width="30px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M22 11L22 18.9671C22 21.2763 19.8658 22.736 18.1292 21.6145L7.34016 14.6474C5.55328 13.4935 5.55328 10.5065 7.34015 9.35258L18.1292 2.38548C19.8658 1.26402 22 2.72368 22 5.03289V7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M2 5V12M2 19V16" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                            </button>
+                            <button id="playPause" class="btn btn-primary me-2">
+                                <i class="bi bi-play-fill"></i> <svg width="30px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#369f32"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M13.8876 9.9348C14.9625 10.8117 15.5 11.2501 15.5 12C15.5 12.7499 14.9625 13.1883 13.8876 14.0652C13.5909 14.3073 13.2966 14.5352 13.0261 14.7251C12.7888 14.8917 12.5201 15.064 12.2419 15.2332C11.1695 15.8853 10.6333 16.2114 10.1524 15.8504C9.6715 15.4894 9.62779 14.7336 9.54038 13.2222C9.51566 12.7947 9.5 12.3757 9.5 12C9.5 11.6243 9.51566 11.2053 9.54038 10.7778C9.62779 9.26636 9.6715 8.51061 10.1524 8.1496C10.6333 7.78859 11.1695 8.11466 12.2419 8.76679C12.5201 8.93597 12.7888 9.10831 13.0261 9.27492C13.2966 9.46483 13.5909 9.69274 13.8876 9.9348Z" stroke="#1C274C" stroke-width="1.5"></path> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                            </button>
+                            <button id="next" class="btn btn-secondary me-2">
+                                <i class="bi bi-skip-forward-fill"></i> <svg width="30px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M19 6V18M5 18V6L15 12L8.33333 16" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                            </button>
+                            <button id="shuffle" class="btn btn-warning me-2">
+                                <i class="bi bi-shuffle"></i> <svg width="30px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 16.25C1.58579 16.25 1.25 16.5858 1.25 17C1.25 17.4142 1.58579 17.75 2 17.75V16.25ZM5.60286 17.75C6.01707 17.75 6.35286 17.4142 6.35286 17C6.35286 16.5858 6.01707 16.25 5.60286 16.25V17.75ZM10.7478 14.087L10.1047 13.7011L10.7478 14.087ZM13.2522 9.91303L13.8953 10.2989L13.2522 9.91303ZM22 7L22.5303 7.53033C22.8232 7.23744 22.8232 6.76256 22.5303 6.46967L22 7ZM19.4697 8.46967C19.1768 8.76256 19.1768 9.23744 19.4697 9.53033C19.7626 9.82322 20.2374 9.82322 20.5303 9.53033L19.4697 8.46967ZM20.5303 4.46967C20.2374 4.17678 19.7626 4.17678 19.4697 4.46967C19.1768 4.76256 19.1768 5.23744 19.4697 5.53033L20.5303 4.46967ZM15.2205 7.3894L14.851 6.73675V6.73675L15.2205 7.3894ZM8.72031 15.7276C8.41765 16.0103 8.40154 16.4849 8.68432 16.7876C8.96711 17.0903 9.44171 17.1064 9.74437 16.8236L8.72031 15.7276ZM2 17.75H5.60286V16.25H2V17.75ZM11.3909 14.4728L13.8953 10.2989L12.6091 9.52716L10.1047 13.7011L11.3909 14.4728ZM18.3971 7.75H22V6.25H18.3971V7.75ZM21.4697 6.46967L19.4697 8.46967L20.5303 9.53033L22.5303 7.53033L21.4697 6.46967ZM22.5303 6.46967L20.5303 4.46967L19.4697 5.53033L21.4697 7.53033L22.5303 6.46967ZM13.8953 10.2989C14.3295 9.57518 14.6286 9.07834 14.9013 8.70996C15.1644 8.35464 15.3692 8.16707 15.59 8.04205L14.851 6.73675C14.384 7.00113 14.0315 7.36397 13.6958 7.8174C13.3697 8.25778 13.0285 8.82806 12.6091 9.52716L13.8953 10.2989ZM18.3971 6.25C17.5819 6.25 16.9173 6.24918 16.3719 6.30219C15.8104 6.35677 15.3179 6.47237 14.851 6.73675L15.59 8.04205C15.8108 7.91703 16.077 7.83793 16.517 7.79516C16.9733 7.75082 17.5531 7.75 18.3971 7.75V6.25ZM10.1047 13.7011C9.42774 14.8294 9.08492 15.3869 8.72031 15.7276L9.74437 16.8236C10.3006 16.3038 10.7639 15.518 11.3909 14.4728L10.1047 13.7011Z" fill="#1C274C"></path> <path d="M2 6.25C1.58579 6.25 1.25 6.58579 1.25 7C1.25 7.41421 1.58579 7.75 2 7.75V6.25ZM22 17L22.5303 17.5303C22.8232 17.2374 22.8232 16.7626 22.5303 16.4697L22 17ZM20.5303 14.4697C20.2374 14.1768 19.7626 14.1768 19.4697 14.4697C19.1768 14.7626 19.1768 15.2374 19.4697 15.5303L20.5303 14.4697ZM19.4697 18.4697C19.1768 18.7626 19.1768 19.2374 19.4697 19.5303C19.7626 19.8232 20.2374 19.8232 20.5303 19.5303L19.4697 18.4697ZM16.1254 16.9447L16.2687 16.2086H16.2687L16.1254 16.9447ZM14.4431 14.6141C14.23 14.2589 13.7693 14.1438 13.4141 14.3569C13.0589 14.57 12.9438 15.0307 13.1569 15.3859L14.4431 14.6141ZM14.4684 16.0065L15.0259 15.5049V15.5049L14.4684 16.0065ZM7.8746 7.05526L8.01789 6.31908L7.8746 7.05526ZM9.55688 9.38587C9.76999 9.74106 10.2307 9.85623 10.5859 9.64312C10.9411 9.43001 11.0562 8.96931 10.8431 8.61413L9.55688 9.38587ZM9.53163 7.99346L8.97408 8.49509L8.97408 8.49509L9.53163 7.99346ZM2 7.75H6.66762V6.25H2V7.75ZM17.3324 17.75H22V16.25H17.3324V17.75ZM22.5303 16.4697L20.5303 14.4697L19.4697 15.5303L21.4697 17.5303L22.5303 16.4697ZM21.4697 16.4697L19.4697 18.4697L20.5303 19.5303L22.5303 17.5303L21.4697 16.4697ZM17.3324 16.25C16.6867 16.25 16.4648 16.2467 16.2687 16.2086L15.9821 17.6809C16.3538 17.7533 16.7473 17.75 17.3324 17.75V16.25ZM13.1569 15.3859C13.4579 15.8875 13.6575 16.2267 13.9108 16.5082L15.0259 15.5049C14.8923 15.3564 14.7753 15.1678 14.4431 14.6141L13.1569 15.3859ZM16.2687 16.2086C15.789 16.1152 15.3528 15.8682 15.0259 15.5049L13.9108 16.5082C14.4556 17.1137 15.1826 17.5253 15.9821 17.6809L16.2687 16.2086ZM6.66762 7.75C7.31332 7.75 7.53519 7.75328 7.73131 7.79145L8.01789 6.31908C7.64616 6.24672 7.25267 6.25 6.66762 6.25V7.75ZM10.8431 8.61413C10.5421 8.11245 10.3425 7.77335 10.0892 7.49182L8.97408 8.49509C9.10771 8.64362 9.22467 8.83219 9.55688 9.38587L10.8431 8.61413ZM7.73131 7.79145C8.21098 7.88481 8.64722 8.13181 8.97408 8.49509L10.0892 7.49182C9.54442 6.88635 8.81735 6.47469 8.01789 6.31908L7.73131 7.79145Z" fill="#1C274C"></path> </g></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <p id="songTitle">Playing: Song 1</p>
+                    </div>
+                </div>
+                <div class="card mt-4 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title">Playlist</h5>
+                    </div>
+                    <div class="list-group">
+                        <button class="list-group-item list-group-item-action" onclick="changeSong(0)">Aayudha Pooja</button>
+                        <button class="list-group-item list-group-item-action" onclick="changeSong(1)">Bad Ass</button>
+                        <button class="list-group-item list-group-item-action" onclick="changeSong(2)">chuttamalle</button>
+                        <button class="list-group-item list-group-item-action" onclick="changeSong(3)">Daavudi</button>
+                        <button class="list-group-item list-group-item-action" onclick="changeSong(4)">katchi sera</button>
+                        <button class="list-group-item list-group-item-action" onclick="changeSong(5)">Moral of the life</button>
+                        <button class="list-group-item list-group-item-action" onclick="changeSong(6)">Red Sea</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playPauseButton = document.getElementById('playPause');
+        const nextButton = document.getElementById('next');
+        const previousButton = document.getElementById('previous');
+        const shuffleButton = document.getElementById('shuffle');
+        const progressBar = document.getElementById('progressBar');
+        const songTitle = document.getElementById('songTitle');
+        const audioSource = document.getElementById('audioSource');
+
+        // Song List
+        const songs = [
+            { title: 'Song 1', src: '../assets/audio/aayudha pooja.mp4' },
+            { title: 'Song 2', src: '../assets/audio/Bad Ass.mp4' },
+            { title: 'Song 3', src: '../assets/audio/chuttamalle.mp4' },
+            { title: 'Song 4', src: '../assets/audio/Daavudi.mp4' },
+            { title: 'Song 5', src: '../assets/audio/katchi sera.mp4' },
+            { title: 'Song 6', src: '../assets/audio/Moral of the story.mp4' },
+            { title: 'Song 7', src: '../assets/audio/Red Sea.mp4' }
+        ];
+        let currentSongIndex = 0;
+        let isShuffle = false;
+        playPauseButton.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseButton.innerHTML = '<i class="bi bi-pause-fill"></i> Pause';
+            } else {
+                audioPlayer.pause();
+                playPauseButton.innerHTML = '<i class="bi bi-play-fill"></i> Play';
+            }
+        });
+        nextButton.addEventListener('click', () => {
+            if (isShuffle) {
+                currentSongIndex = Math.floor(Math.random() * songs.length);
+            } else {
+                currentSongIndex = (currentSongIndex + 1) % songs.length;
+            }
+            changeSong(currentSongIndex);
+        });
+        previousButton.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            changeSong(currentSongIndex);
+        });
+        shuffleButton.addEventListener('click', () => {
+            isShuffle = !isShuffle;
+            shuffleButton.classList.toggle('active', isShuffle);
+            shuffleButton.innerHTML = isShuffle ? '<i class="bi bi-shuffle-2"></i> Shuffle On' : '<i class="bi bi-shuffle"></i> Shuffle Off';
+        });
+        function changeSong(index) {
+            currentSongIndex = index;
+            audioSource.src = songs[currentSongIndex].src;
+            songTitle.textContent = `Playing: ${songs[currentSongIndex].title}`;
+            audioPlayer.load(); // Load new audio source
+            audioPlayer.play(); // Automatically play new song
+            playPauseButton.innerHTML = '<i class="bi bi-pause-fill"></i> Pause';
+        }
+        audioPlayer.addEventListener('timeupdate', () => {
+            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+            progressBar.setAttribute('aria-valuenow', progress);
+        });
+        // Update the current time when the user clicks on the progress bar
+        progressBarContainer.addEventListener('click', (event) => {
+            const rect = progressBarContainer.getBoundingClientRect();
+            const offsetX = event.clientX - rect.left;
+            const totalWidth = rect.width;
+            const percentage = offsetX / totalWidth;
+            audioPlayer.currentTime = percentage * audioPlayer.duration;
+        });
+        // Load the first song when the page loads
+        changeSong(currentSongIndex);
+    </script>
+</body>
+</html>
+
+    </script>
+</body>
+</html>
