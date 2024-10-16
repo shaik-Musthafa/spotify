@@ -1,0 +1,64 @@
+/* Base Styles (default for larger screens) */
+.container6 {
+    box-shadow: 5px 5px 10px gainsboro;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 200px; */
+    overflow-y: scroll;
+    overflow-x: scroll;
+    margin: -435px 200px;
+    width: 68.5%;
+}
+
+.card {
+    width: calc(30% - 10px); /* Default for desktop */
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    .container6 {
+        margin: -150px 10px; /* Adjust margins for mobile */
+        width: 95%; /* Full width on mobile */
+    }
+    .card {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Allow card height to be dynamic */
+    }
+    .card img {
+        height: 150px; /* Adjust image height for mobile */
+    }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container6 {
+        margin: -250px 20px; /* Adjust margins for tablets */
+        width: 90%; /* Slightly less width than mobile */
+    }
+    .card {
+        width: calc(45% - 10px); /* Adjust card width for tablets */
+    }
+}
+
+/* Small Desktop/Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container6 {
+        margin: -300px 50px; /* Adjust margins for small desktops */
+        width: 85%; /* Adjust width for small desktops */
+    }
+    .card {
+        width: calc(30% - 10px); /* Adjust card width for small desktops */
+    }
+}
+
+/* Desktops */
+@media (min-width: 1025px) {
+    .container6 {
+        margin: -350px 100px; /* Default margins for desktops */
+        width: 80%; /* Default width for larger screens */
+    }
+    .card {
+        width: calc(20% - 10px); /* Wider cards for larger screens */
+    }
+}
