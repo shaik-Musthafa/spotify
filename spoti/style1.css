@@ -1,0 +1,98 @@
+/* Mobile Devices (up to 767px) */
+@media (max-width: 767px) {
+    body {
+        background-color: #f9f9f9;
+        color: #333;
+    }
+    .dark-theme {
+        background-color: #121212;
+        color: white;
+    }
+    #container, #container2, #container3, #container4, .library, .card {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+    .list, .list1 {
+        width: 100%;
+    }
+    iframe {
+        height: 200px;
+    }
+    .dark-theme #container, .dark-theme #container2, .dark-theme #container3, .dark-theme #container4, 
+    .dark-theme .library, .dark-theme .card {
+        background-color: #333;
+        color: white;
+    }
+    .dark-theme .list, .dark-theme .list1 {
+        background-color: #555;
+        color: white;
+    }
+    .dark-theme iframe {
+        background-color: #333;
+    }
+}
+
+/* Tablet Devices (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        background-color: #eaeaea;
+        color: #222;
+    }
+    .dark-theme {
+        background-color: #1e1e1e;
+        color: white;
+    }
+    #container, #container2, #container3, #container4, .library, .card {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .list, .list1 {
+        width: 90%;
+    }
+    iframe {
+        height: 250px;
+    }
+    .dark-theme #container, .dark-theme #container2, .dark-theme #container3, .dark-theme #container4, 
+    .dark-theme .library, .dark-theme .card {
+        background-color: #444;
+        color: white;
+    }
+    .dark-theme .list, .dark-theme .list1 {
+        background-color: #666;
+        color: white;
+    }
+    .dark-theme iframe {
+        background-color: #444;
+    }
+}
+
+/* Desktop (1025px and up) */
+@media (min-width: 1025px) {
+    body {
+        background-color: white;
+        color: black;
+    }
+    .dark-theme {
+        background-color: #121212;
+        color: white;
+    }
+    #container, #container2, #container3, #container4, .library, .card {
+        width: 80%;
+    }
+    iframe {
+        height: 300px;
+    }
+    .dark-theme #container, .dark-theme #container2, .dark-theme #container3, .dark-theme #container4, 
+    .dark-theme .library, .dark-theme .card {
+        background-color: #555;
+        color: white;
+    }
+    .dark-theme .list, .dark-theme .list1 {
+        background-color: #777;
+        color: white;
+    }
+    .dark-theme iframe {
+        background-color: #555;
+    }
+}
