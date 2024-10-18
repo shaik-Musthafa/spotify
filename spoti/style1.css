@@ -306,15 +306,23 @@
     #more-artists .card:hover .play {
         opacity: 1;
     }
-    #container5{
+    /* #container5 {
+        height: 50vh;
         overflow-y: scroll;
-    }
+        scroll-behavior: smooth;
+        margin-top: 100px;
+    } */
+    
     iframe {
         width: 100%;
         border-radius: 8px;
-        margin-top: -10px;
-        height: 35vh;
+        margin-top: -5px;
+        height: 20vh;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        scrollbar-shadow-color: aqua;
     }
+    
     /* Song Info Styling */
     #songinfo {
         border-radius: 8px;
