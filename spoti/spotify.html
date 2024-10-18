@@ -311,7 +311,7 @@
                 Spotify</a>
               <form class="d-flex mt-3" role="search" id="searchForm">
                 <input class="form-control me-2" id="searchInput" type="search" placeholder="Search">
-                <button class="btn btn-outline-danger" id="search" type="submit" onclick="fetchData('4VIm6jghrV0MfwwLyp1E7y')">Search</button>
+                <button class="btn btn-outline-danger" id="search" type="submit">Search</button>
             </form>
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -879,7 +879,13 @@
           }
         }
         //song js
-        async function fetchData(episodeId) {
+    document.getElementById("searchForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    const episodeId = '4VIm6jghrV0MfwwLyp1E7y'; // Use the episode ID you want to search
+    fetchData(episodeId); // Call the fetchData function
+});
+
+async function fetchData(episodeId) {
     const url = `https://spotify-scraper.p.rapidapi.com/v1/chapter/details?episodeId=${episodeId}`;
     const options = {
         method: 'GET',
@@ -896,9 +902,7 @@
         const resultDiv = document.getElementById("songinfo");
 
         // Toggle display of the song info
-        if (resultDiv.style.display === 'none' || resultDiv.style.display === '') {
-            resultDiv.style.display = 'block';
-        }
+        resultDiv.style.display = 'block';
 
         resultDiv.innerHTML = `
             <h3 style="color:white">${result.name || "API not working"}</h3>
