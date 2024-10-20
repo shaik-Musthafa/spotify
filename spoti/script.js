@@ -1,19 +1,16 @@
 document.getElementById("searchForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
-    const searchTerm = document.getElementById("searchInput").value; // Get the search input value
+    event.preventDefault(); 
+    const searchTerm = document.getElementById("searchInput").value;
     if (searchTerm) {
-        fetchTracks(searchTerm); // Pass the search term to the API request
+        fetchTracks(searchTerm); 
     }
 });
-
-// Function to fetch data from the API
 async function fetchTracks(query) {
     const url = 'https://spotify-scraper2.p.rapidapi.com/search_all';
     const data = new FormData();
-    data.append('query', query); // Use the search term entered by the user
+    data.append('query', query); 
     data.append('type', 'track');
     data.append('limit', '5');
-
     const options = {
         method: 'POST',
         headers: {
@@ -22,7 +19,6 @@ async function fetchTracks(query) {
         },
         body: data
     };
-
     try {
         const response = await fetch(url, options);
         
@@ -31,13 +27,9 @@ async function fetchTracks(query) {
         }
         
         const result = await response.json();
-        console.log("API response:", result); // Log the result for debugging
-
-        // Display result in the songinfo div
+        console.log("API response:", result); 
         const resultDiv = document.getElementById("songinfo");
-        resultDiv.style.display = 'block'; // Show the div
-
-        // Ensure we access the correct path to items: result.tracks.items
+        resultDiv.style.display = 'block'; 
         if (result && result.tracks && result.tracks.items && result.tracks.items.length > 0) {
             resultDiv.innerHTML = result.tracks.items.map(track => `
                 <h3 style="color:white">${track.track_name || "No Name Available"}</h3>
@@ -48,11 +40,10 @@ async function fetchTracks(query) {
                     <source src="${track.preview_url || ''}" type="audio/mpeg">
                 </audio>
                 <hr>
-            `).join(''); // Loop through all tracks and display their details
+            `).join('');
         } else {
             resultDiv.innerHTML = '<p style="color:white">No tracks found for the given search term.</p>';
         }
-
     } catch (error) {
         console.error('Error fetching data:', error);
         document.getElementById("songinfo").innerHTML = `<p class="error">Error fetching data: ${error.message}</p>`;
