@@ -184,7 +184,7 @@
         box-shadow: 5px 5px 15px gainsboro;
         margin-top: -285px;
         width: 100%;
-        height: 130vh;
+        max-height: 170vh;
     }
     .container6 a {
         z-index: 2;
@@ -198,11 +198,15 @@
     #card1{
         background-color: #1c1c1c;
         color: white;
-        width: calc(40% - 10px);
-        height: 200px;
+        width: calc(70% - 50px);
+        height: 150px;
         position: relative;
         overflow: hidden;
         transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .card:hover~#btn{
+        position: relative;
+        top: -200px;
     }
     .card:hover {
         transform: scale(1.05);
@@ -224,7 +228,7 @@
         transition: border-bottom 0.3s ease;
     }
 
-    .play {
+    /* .play {
         position: absolute;
         height: 45px;
         top: 50%;
@@ -232,7 +236,7 @@
         transform: translate(-50%, -50%);
         opacity: 0;
         transition: opacity 0.3s ease;
-    }
+    } */
 
     .card:hover .play {
         opacity: 0.9;
@@ -256,12 +260,12 @@
         background-color: gray;
     }
 
-    #btn {
+    /* #btn {
         height: 45px;
         width: 45px;
         margin-left: 40px;
         margin-top: 18px;
-    }
+    } */
 
     #btn1 {
         height: 45px;
@@ -337,6 +341,81 @@
         transition: transform 0.5s ease, font-size 0.5s ease;
         font-size: 0.5rem; 
     }
+    #preview {
+        display: flex;
+        justify-content: space-between;
+        background: linear-gradient(to right, #ae2896, #509bf5);
+        position: fixed;
+        bottom: 0;
+        min-height: 150px;
+        left: 0;
+        right: 0;
+        padding: 15px 40px;
+        z-index: 100;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .preview h4 {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #fff;
+    }
+
+    .preview p {
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        max-width: 800px;
+    }
+
+    .preview button {
+        padding: 12px 30px;
+        border: 0;
+        outline: 0;
+        border-radius: 20px;
+        background-color: #fff;
+        color: #ae2896;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .preview button:hover {
+        background-color: #ae2896;
+        color: #fff;
+    }
+    #footer2{
+        background-color: #333;
+        border-radius: 10px;
+        max-width: 300px;
+        /* height: 190px; */
+        margin-top: 3px;
+    }
+    #footer3{
+        /* background-color: #834a4a; */
+        /* min-height: 250px; */
+        display: inline;  
+        /* margin-top: 15px; */
+        position: relative;
+        top: 20px;
+        gap: 10px;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .anchor {
+        text-decoration: none;
+        margin-left: 10px;
+        color: #555;
+        font-size: 17px;
+        height: 20px;
+    }
+    
+    .anchor:hover {
+        border-bottom: 2px solid;
+        /* background-color: #000; */
+        color: aqua;
+    }    
 }
 @media screen and (max-width: 1024px) {
     /* Styles for screens with max width 1024px */
@@ -686,6 +765,68 @@
         transition: transform 0.4s ease, font-size 0.4s ease;
         font-size: 0.58rem;
     }
+    #preview {
+        display: flex;
+        justify-content: space-between;
+        background: linear-gradient(to right, #ae2896, #509bf5);
+        position: fixed;
+        bottom: 0;
+        min-height: 10px;
+        left: 0;
+        right: 0;
+        padding: 15px 40px;
+        z-index: 100;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5)
+    }
+    .preview h4 {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #fff;
+    }
+    .preview p {
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        max-width: 800px;
+    }
+    .preview button {
+        padding: 12px 30px;
+        border: 0;
+        outline: 0;
+        border-radius: 20px;
+        background-color: #fff;
+        color: #ae2896;font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease,color 0.3s ease;
+    }
+    .preview button:hover {
+        background-color: #ae2896; 
+        color: #fff; 
+    }
+    #footer3{
+        /* background-color: #834a4a; */
+        height: 150px;
+        display: flex;  
+        /* margin-top: 15px; */
+        position: relative;
+        top: 20px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .anchor {
+        text-decoration: none;
+        margin-left: 10px;
+        color: #555;
+        font-size: 17px;
+        height: 20px;
+    }
+    
+    .anchor:hover {
+        border-bottom: 2px solid;
+        /* background-color: #000; */
+        color: aqua;
+    }    
 }
 @media screen and (max-width: 1140px) {
     /* Styles for screens with a max width of 1140px */
@@ -1035,4 +1176,66 @@
         transition: transform 0.4s ease, font-size 0.4s ease;
         font-size: 0.58rem;
     }
+    #preview {
+        display: flex;
+        justify-content: space-between;
+        background: linear-gradient(to right, #ae2896, #509bf5);
+        position: fixed;
+        bottom: 0;
+        min-height: 10px;
+        left: 0;
+        right: 0;
+        padding: 15px 40px;
+        z-index: 100;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5)
+    }
+    .preview h4 {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #fff;
+    }
+    .preview p {
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        max-width: 800px;
+    }
+    .preview button {
+        padding: 12px 30px;
+        border: 0;
+        outline: 0;
+        border-radius: 20px;
+        background-color: #fff;
+        color: #ae2896;font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease,color 0.3s ease;
+    }
+    .preview button:hover {
+        background-color: #ae2896; 
+        color: #fff; 
+    }
+    #footer3{
+        /* background-color: #834a4a; */
+        height: 150px;
+        display: flex;  
+        /* margin-top: 15px; */
+        position: relative;
+        top: 20px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .anchor {
+        text-decoration: none;
+        margin-left: 10px;
+        color: #555;
+        font-size: 17px;
+        height: 20px;
+    }
+    
+    .anchor:hover {
+        border-bottom: 2px solid;
+        /* background-color: #000; */
+        color: aqua;
+    }    
 }
