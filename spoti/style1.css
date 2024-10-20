@@ -306,13 +306,6 @@
     #more-artists .card:hover .play {
         opacity: 1;
     }
-    /* #container5 {
-        height: 50vh;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-        margin-top: 100px;
-    } */
-    
     iframe {
         width: 100%;
         border-radius: 8px;
@@ -343,5 +336,703 @@
         transform: scale(1.01); 
         transition: transform 0.5s ease, font-size 0.5s ease;
         font-size: 0.5rem; 
+    }
+}
+@media screen and (max-width: 1024px) {
+    /* Styles for screens with max width 1024px */
+    body {
+        background-color: lightgray;
+        color: black;
+    }
+
+    /* Dark Theme */
+    .dark-theme {
+        background-color: #1a1a1a;
+        color: white;
+    }
+
+    .dark-theme #container {
+        background-color: #333;
+        color: white;
+    }
+
+    .dark-theme #container2 {
+        background-color: #000;
+    }
+
+    .dark-theme .list, .dark-theme .list1 {
+        background-color: #555;
+        color: white;
+    }
+
+    .dark-theme .library {
+        background-color: #444;
+        backdrop-filter: blur(8px);
+        color: white;
+    }
+
+    .dark-theme .navbar {
+        background-color: #222;
+        color: white;
+    }
+
+    .dark-theme a.nav-link {
+        color: white;
+    }
+
+    .dark-theme .btn-outline-secondary {
+        color: white;
+        border-color: white;
+    }
+
+    .dark-theme .btn-outline-secondary:hover {
+        background-color: white;
+        color: black;
+    }
+
+    #container {
+        background-color: white;
+        border-radius: 15px;
+        height: 45px;
+        width: 90px;
+        text-align: center;
+    }
+
+    .login {
+        position: relative;
+        top: 3px;
+    }
+
+    #container:hover {
+        opacity: 0.8;
+        transform: scale(1.03, 1.05);
+    }
+
+    #container2 {
+        background-color: gainsboro;
+        border-radius: 6px;
+        margin-top: 150px;
+        height: 220px;
+        width: 220px;
+        padding: 10px;
+        position: relative;
+    }
+
+    .library {
+        border-radius: 6px;
+        backdrop-filter: blur(4px);
+        background-color: rgba(120, 120, 120, 0.6);
+        width: 100%;
+        height: 35px;
+        opacity: 0.75;
+    }
+
+    #fl {
+        text-decoration: none;
+        color: white;
+        opacity: 0.6;
+        position: sticky;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    #fl:hover {
+        color: white;
+        opacity: 1;
+    }
+
+    .library img {
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    .help {
+        font-size: 11px;
+        color: #bbb;
+        margin-bottom: 12px;
+    }
+
+    #container3 {
+        justify-content: center;
+        height: 180px;
+        overflow-y: scroll;
+        padding: 12px;
+    }
+
+    #container3::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    #container3::-webkit-scrollbar-thumb {
+        background-color: #444;
+        border-radius: 8px;
+    }
+
+    .list {
+        background-color: white;
+        height: 35px;
+        width: 110px;
+        border-radius: 16px;
+        align-items: center;
+        cursor: pointer;
+        text-align: center;
+        line-height: 35px;
+    }
+
+    .list1 {
+        background-color: white;
+        height: 35px;
+        width: 130px;
+        border-radius: 16px;
+        align-items: center;
+        cursor: pointer;
+        text-align: center;
+        line-height: 35px;
+    }
+
+    .list, .list1 {
+        font-weight: bold;
+        color: black;
+        transition: color 0.2s ease;
+    }
+
+    .list:hover, .list1:hover {
+        color: #65544a;
+    }
+
+    .container6 {
+        box-shadow: 4px 4px 12px black;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        width: 100%;
+        padding: 8px;
+        backdrop-filter: blur(3px);
+    }
+
+    #album {
+        margin-top: -120px;
+    }
+
+    .container6 {
+        position: relative;
+        z-index: 1;
+    }
+
+    #contain {
+        box-shadow: 4px 4px 12px gainsboro;
+        margin-top: -265px;
+        width: 100%;
+        height: 120vh;
+    }
+
+    .container6 a {
+        z-index: 2;
+        position: relative;
+    }
+
+    #flexi {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    #card1 {
+        background-color: #1b1b1b;
+        color: white;
+        width: calc(30% - 12px);
+        height: 240px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.04);
+        background-color: #333;
+    }
+
+    .popular {
+        width: 180px;
+        margin-top: 115px;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .popular:hover, .card-title:hover {
+        border-bottom: 2px solid;
+        transition: border-bottom 0.2s ease;
+    }
+
+    .play {
+        position: absolute;
+        height: 40px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .card:hover .play {
+        opacity: 0.85;
+    }
+
+    .card-img-top {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+        transition: transform 0.2s ease;
+    }
+
+    .card:hover .card-img-top {
+        transform: scale(1.04);
+    }
+
+    .card:hover {
+        background-color: gray;
+    }
+
+    #btn {
+        height: 45px;
+        width: 45px;
+        margin-left: 40px;
+        margin-top: 18px;
+    }
+
+    #btn1 {
+        height: 45px;
+        width: 45px;
+        margin-left: 40px;
+        margin-top: 8px;
+    }
+
+    #more-artists {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    #more-artists .card {
+        width: calc(25% - 12px);
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    #more-artists .card:hover {
+        transform: scale(1.04);
+        background-color: #333;
+    }
+
+    #more-artists .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    #more-artists .card-title {
+        color: white;
+    }
+
+    #more-artists .play {
+        height: 40px;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    #more-artists .card:hover .play {
+        opacity: 1;
+    }
+
+    iframe {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: -5px;
+        height: 28vh;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        scrollbar-shadow-color: aqua;
+    }
+
+    /* Song Info Styling */
+    #songinfo {
+        border-radius: 8px;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        height: 75px;
+    }
+
+    #foot {
+        display: inline;
+    }
+
+    .foot1:hover {
+        transform: scale(1.08);
+        transition: 0.9s all;
+    }
+
+    .foot2:hover {
+        transform: scale(1.01);
+        transition: transform 0.4s ease, font-size 0.4s ease;
+        font-size: 0.58rem;
+    }
+}
+@media screen and (max-width: 1140px) {
+    /* Styles for screens with a max width of 1140px */
+    body {
+        background-color: lightgray;
+        color: black;
+    }
+
+    /* Dark Theme */
+    .dark-theme {
+        background-color: #1a1a1a;
+        color: white;
+    }
+
+    .dark-theme #container {
+        background-color: #333;
+        color: white;
+    }
+
+    .dark-theme #container2 {
+        background-color: #000;
+    }
+
+    .dark-theme .list, .dark-theme .list1 {
+        background-color: #555;
+        color: white;
+    }
+
+    .dark-theme .library {
+        background-color: #444;
+        backdrop-filter: blur(8px);
+        color: white;
+    }
+
+    .dark-theme .navbar {
+        background-color: #222;
+        color: white;
+    }
+
+    .dark-theme a.nav-link {
+        color: white;
+    }
+
+    .dark-theme .btn-outline-secondary {
+        color: white;
+        border-color: white;
+    }
+
+    .dark-theme .btn-outline-secondary:hover {
+        background-color: white;
+        color: black;
+    }
+
+    #container {
+        background-color: white;
+        border-radius: 15px;
+        height: 45px;
+        width: 90px;
+        text-align: center;
+    }
+
+    .login {
+        position: relative;
+        top: 3px;
+    }
+
+    #container:hover {
+        opacity: 0.8;
+        transform: scale(1.03, 1.05);
+    }
+
+    #container2 {
+        background-color: gainsboro;
+        border-radius: 6px;
+        margin-top: 150px;
+        height: 220px;
+        width: 220px;
+        padding: 10px;
+        position: relative;
+    }
+
+    .library {
+        border-radius: 6px;
+        backdrop-filter: blur(4px);
+        background-color: rgba(120, 120, 120, 0.6);
+        width: 100%;
+        height: 35px;
+        opacity: 0.75;
+    }
+
+    #fl {
+        text-decoration: none;
+        color: white;
+        opacity: 0.6;
+        position: sticky;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    #fl:hover {
+        color: white;
+        opacity: 1;
+    }
+
+    .library img {
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    .help {
+        font-size: 11px;
+        color: #bbb;
+        margin-bottom: 12px;
+    }
+
+    #container3 {
+        justify-content: center;
+        height: 180px;
+        overflow-y: scroll;
+        padding: 12px;
+    }
+
+    #container3::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    #container3::-webkit-scrollbar-thumb {
+        background-color: #444;
+        border-radius: 8px;
+    }
+
+    .list {
+        background-color: white;
+        height: 35px;
+        width: 110px;
+        border-radius: 16px;
+        align-items: center;
+        cursor: pointer;
+        text-align: center;
+        line-height: 35px;
+    }
+
+    .list1 {
+        background-color: white;
+        height: 35px;
+        width: 130px;
+        border-radius: 16px;
+        align-items: center;
+        cursor: pointer;
+        text-align: center;
+        line-height: 35px;
+    }
+
+    .list, .list1 {
+        font-weight: bold;
+        color: black;
+        transition: color 0.2s ease;
+    }
+
+    .list:hover, .list1:hover {
+        color: #65544a;
+    }
+
+    .container6 {
+        box-shadow: 4px 4px 12px black;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        width: 100%;
+        padding: 8px;
+        backdrop-filter: blur(3px);
+    }
+
+    #album {
+        margin-top: -120px;
+    }
+
+    .container6 {
+        position: relative;
+        z-index: 1;
+    }
+
+    #contain {
+        box-shadow: 4px 4px 12px gainsboro;
+        margin-top: -265px;
+        width: 100%;
+        height: 120vh;
+    }
+
+    .container6 a {
+        z-index: 2;
+        position: relative;
+    }
+
+    #flexi {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    #card1 {
+        background-color: #1b1b1b;
+        color: white;
+        width: calc(30% - 12px);
+        height: 240px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.04);
+        background-color: #333;
+    }
+
+    .popular {
+        width: 180px;
+        margin-top: 115px;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .popular:hover, .card-title:hover {
+        border-bottom: 2px solid;
+        transition: border-bottom 0.2s ease;
+    }
+
+    .play {
+        position: absolute;
+        height: 40px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .card:hover .play {
+        opacity: 0.85;
+    }
+
+    .card-img-top {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+        transition: transform 0.2s ease;
+    }
+
+    .card:hover .card-img-top {
+        transform: scale(1.04);
+    }
+
+    .card:hover {
+        background-color: gray;
+    }
+
+    #btn {
+        height: 45px;
+        width: 45px;
+        margin-left: 40px;
+        margin-top: 18px;
+    }
+
+    #btn1 {
+        height: 45px;
+        width: 45px;
+        margin-left: 40px;
+        margin-top: 8px;
+    }
+
+    #more-artists {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    #more-artists .card {
+        width: calc(25% - 12px);
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    #more-artists .card:hover {
+        transform: scale(1.04);
+        background-color: #333;
+    }
+
+    #more-artists .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    #more-artists .card-title {
+        color: white;
+    }
+
+    #more-artists .play {
+        height: 40px;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    #more-artists .card:hover .play {
+        opacity: 1;
+    }
+
+    iframe {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: -5px;
+        height: 28vh;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        scrollbar-shadow-color: aqua;
+    }
+
+    /* Song Info Styling */
+    #songinfo {
+        border-radius: 8px;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        height: 75px;
+    }
+
+    #foot {
+        display: inline;
+    }
+
+    .foot1:hover {
+        transform: scale(1.08);
+        transition: 0.9s all;
+    }
+
+    .foot2:hover {
+        transform: scale(1.01);
+        transition: transform 0.4s ease, font-size 0.4s ease;
+        font-size: 0.58rem;
     }
 }

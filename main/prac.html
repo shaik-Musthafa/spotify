@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Search Form -->
+<form class="d-flex mt-3" role="search" id="searchForm">
+    <input class="form-control me-2" id="searchInput" type="search" placeholder="Search" required>
+    <button class="btn btn-outline-danger" id="search" type="submit">Search</button>
+</form>
+
+<!-- Div to Display Song Info -->
+<div id="songinfo" style="display:none;"></div>
+
+<script>
+  // Event listener for form submission
+document.getElementById("searchForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    const searchTerm = document.getElementById("searchInput").value; // Get the search input value
+    if (searchTerm) {
+        fetchTracks(searchTerm); // Pass the search term to the API request
+    }
+});
+
+// Function to fetch data from the API
+async function fetchTracks(query) {
+    const url = 'https://spotify-scraper2.p.rapidapi.com/search_all';
+    const data = new FormData();
+    data.append('query', query); // Use the search term entered by the user
+    data.append('type', 'track');
+    data.append('limit', '5');
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'x-rapidapi-key': '3820a6b453msh24329ce78bc43fep124d5djsn20ae28943bd1',
+            'x-rapidapi-host': 'spotify-scraper2.p.rapidapi.com'
+        },
+        body: data
+    };
+
+    try {
+        const response = await fetch(url, options);
+        
+        if (!response.ok) {
+            throw new Error(`API request failed with status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        console.log("API response:", result); // Log the result for debugging
+
+        // Display result in the songinfo div
+        const resultDiv = document.getElementById("songinfo");
+        resultDiv.style.display = 'block'; // Show the div
+
+        // Ensure we access the correct path to items: result.tracks.items
+        if (result && result.tracks && result.tracks.items && result.tracks.items.length > 0) {
+            resultDiv.innerHTML = result.tracks.items.map(track => `
+                <h3>${track.track_name || "No Name Available"}</h3>
+                <p><strong>Artist:</strong> ${track.artists[0]?.name || "No Artist Info"}</p>
+                <p><strong>Duration:</strong> ${(track.duration_ms / 1000).toFixed(2) + " seconds" || "No Duration"}</p>
+                <p><strong>Album:</strong> ${track.album.name || "No Album Info"}</p>
+                <audio controls style="width: 250px;">
+                    <source src="${track.preview_url || ''}" type="audio/mpeg">
+                </audio>
+                <hr>
+            `).join(''); // Loop through all tracks and display their details
+        } else {
+            resultDiv.innerHTML = '<p style="color:white">No tracks found for the given search term.</p>';
+        }
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        document.getElementById("songinfo").innerHTML = `<p class="error">Error fetching data: ${error.message}</p>`;
+        document.getElementById("songinfo").style.display = "block";
+    }
+}
+
+</script>
+
+    <!-- <script>
+        async function fetchTracks() {
+    const url = 'https://spotify-scraper2.p.rapidapi.com/search_all';
+    const data = new FormData();
+    data.append('query', 'Devara');
+    data.append('type', 'track');
+    data.append('limit', '30');
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'x-rapidapi-key': '3820a6b453msh24329ce78bc43fep124d5djsn20ae28943bd1',
+            'x-rapidapi-host': 'spotify-scraper2.p.rapidapi.com'
+        },
+        body: data
+    };
+
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json(); 
+        console.log(result); // Log the result or work with it as needed
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+fetchTracks();
+
+    </script> -->
+    <!-- <script>
+        async function fetchData(term) {
+        const url = `https://spotify-scraper.p.rapidapi.com/v1/search?term=${term}&type=all`; 
+        const options = {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-key': '3820a6b453msh24329ce78bc43fep124d5djsn20ae28943bd1',
+                'x-rapidapi-host': 'spotify-scraper.p.rapidapi.com'
+            }
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const data = await response.json();
+
+            if (data && data.tracks && data.tracks.items && data.tracks.items.length > 0) {
+                const result = data.tracks.items[0]; 
+                const resultDiv = document.getElementById("songinfo");
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = `
+                    <h3 style="color:white">${result.name || "No Name Available"}</h3>
+                    <p style="color:white"><strong>Artist:</strong> ${result.artists && result.artists[0] ? result.artists[0].name : "No Artist Info"}</p>
+                    <p style="color:white"><strong>Duration:</strong> ${result.durationMs ? (result.durationMs / 1000).toFixed(2) + " seconds" : "No Duration"}</p>
+                    <p style="color:white"><strong>Release Date:</strong> ${result.album && result.album.release_date || "No Release Date"}</p>
+                    <p style="color:white"><strong>Language(s):</strong> ${result.type || "No Type Info"}</p>
+                    <audio controls style="width: 250px;">
+                        <source src="${result.preview_url || ''}" type="audio/mpeg">
+                    </audio>
+                `;
+            } else {
+                throw new Error("No tracks found for the given search term.");
+            }
+        } catch (error) {
+            console.error(error);
+            const resultDiv = document.getElementById("songinfo");
+            resultDiv.innerHTML = '<p class="error">Error fetching data. Please try again later.</p>';
+            resultDiv.style.display = "block";
+        }
+    }
+    </script> -->
+</body>
+</html>
